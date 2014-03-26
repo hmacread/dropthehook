@@ -1,0 +1,9 @@
+!#/bin/bash
+
+echo "    <wpt lat=\"$declat\" lon=\"$declon\">"
+echo "        <name>$name</name>"
+echo "        <desc>$desc</name>"
+echo "        <sym>anchorage</sym>"
+echo "        <type>WPT</type>"
+echo "    </wpt>"
+

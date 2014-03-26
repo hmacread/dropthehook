@@ -1,0 +1,21 @@
+#!/bin/bash
+# Wrapper for waypoint input that outputs a simple GPX file for OpenCPN
+
+if [ -z $1 ] ; then
+  echo "Usage: creategpx <filename>"
+  exit 1
+fi
+
+cat ~/scripts/gpxhead.txt > $1
+
+#run input waypoint and preserve variables
+. inputwpt
+
+echo "    <wpt lat=\"$declat\" lon=\"$declon\">" >> $1
+echo "        <name>$name</name>" >> $1
+echo "        <desc>$desc</desc>" >> $1
+echo "        <sym>$type</sym>"	>> $1
+echo "        <type>WPT</type>" >> $1
+echo "    </wpt>" >> $1
+
+cat ~/scripts/gpxfoot.txt >> $1
