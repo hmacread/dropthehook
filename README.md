@@ -10,19 +10,19 @@ Installation
 
 2. Change permissions
 
-`cd <installdir>`
-`chmod +x *.command`
-`chmod +x *.sh`
+	`cd <installdir>`
+	`chmod +x *.command`
+	`chmod +x *.sh`
 
 3. Add `<installdir>` to PATH in users `.profile`
 
 4. Change the following explicit paths:
 
-`inputmulti.command:gpxOutputDir="$HOME/Desktop”`
-`inputtrack.command:gpxOutputDir="$HOME/Desktop”`
-`inputwpt.command:gpxOutputDir="$HOME/Desktop”`
-`msgfamily.sh:addrfile="$HOME/dev/family_addresses.txt”`
-`msgyotreps.sh:addrfile="$HOME/dev/yotreps_addresses.txt”`
+	`inputmulti.command:gpxOutputDir="$HOME/Desktop”`
+	`inputtrack.command:gpxOutputDir="$HOME/Desktop”`
+	`inputwpt.command:gpxOutputDir="$HOME/Desktop”`
+	`msgfamily.sh:addrfile="$HOME/dev/family_addresses.txt”`
+	`msgyotreps.sh:addrfile="$HOME/dev/yotreps_addresses.txt”`
 
 5. Run inputwpt.command  
 
