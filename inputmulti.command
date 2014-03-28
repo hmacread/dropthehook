@@ -40,8 +40,8 @@ read desc
 #TODO
 type="anchorage"
 
-declat=`deg2dec $lat`
-declon=`deg2dec $lon`
+declat=`deg2dec.sh $lat`
+declon=`deg2dec.sh $lon`
 
 echo
 echo "Please confirm this data is correct"
