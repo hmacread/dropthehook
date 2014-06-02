@@ -62,7 +62,7 @@ if [[ $sub == 'y' ]]; then
   gpxPrefix=`echo $name | sed 's/[><\.,"/|?*:[:space:]]//g'`
   gpxFile=$gpxOutputDir/$gpxPrefix.gpx
 
-  if ( creategpx.sh "$name" $declat $declon "$desc" "$type" >> $gpxFile ); then
+  if ( /Users/hmacread/dev/dropthehook/creategpx.sh "$name" $declat $declon "$desc" "$type" >> $gpxFile ); then
     echo "Created $gpxPrefix.gpx successfully"
   fi
 fi

@@ -40,8 +40,8 @@ read desc
 #TODO
 type="triangle"
 
-declat=`deg2dec.sh $lat`
-declon=`deg2dec.sh $lon`
+declat=`/Users/hmacread/dev/dropthehook/deg2dec.sh $lat`
+declon=`/Users/hmacread/dev/dropthehook/deg2dec.sh $lon`
 
 echo
 echo "Please confirm this data is correct"
@@ -62,7 +62,7 @@ if [[ $sub == 'y' ]]; then
   gpxPrefix=`echo $name | sed 's/[><\.,"/|?*:[:space:]]//g'`
   gpxFile=$gpxOutputDir/$gpxPrefix.gpx
 
-  if ( creategpx.sh "$name" $declat $declon "$desc" "$type" > $gpxFile ); then
+  if ( /Users/hmacread/dev/dropthehook/creategpx.sh "$name" $declat $declon "$desc" "$type" > $gpxFile ); then
     echo "Created $gpxPrefix.gpx successfully"
   fi
 fi

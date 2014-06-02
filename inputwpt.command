@@ -5,7 +5,7 @@
 gpxOutputDir="$HOME/Desktop"
 
 #if VM is not running display error message until ready
-while (! vmconnect.sh); do
+while (! /Users/hmacread/dev/dropthehook/vmconnect.sh); do
   echo
   echo -n "WARNING: Windows VM not running. Continue for GPX entry only? (y/n) " 
   read sub
@@ -45,11 +45,11 @@ done
 echo -n "Description (press Enter when finished): "
 read desc
 
-#TODO
+# 'triangle' for transit 'anchorage' for anchorage waypoint
 type="anchorage"
 
-declat=`deg2dec.sh $lat`
-declon=`deg2dec.sh $lon`
+declat=`/Users/hmacread/dev/dropthehook/deg2dec.sh $lat`
+declon=`/Users/hmacread/dev/dropthehook/deg2dec.sh $lon`
 
 echo
 echo "Please confirm this data is correct"
@@ -71,7 +71,7 @@ if [[ $sub == 'y' ]]; then
   gpxFile=$gpxOutputDir/$gpxPrefix.gpx
 
   echo
-  if ( creategpx.sh "$name" $declat $declon "$desc" "$type" >> $gpxFile ); then
+  if ( /Users/hmacread/dev/dropthehook/creategpx.sh "$name" $declat $declon "$desc" "$type" >> $gpxFile ); then
     echo "Created $gpxPrefix.gpx successfully"
   fi
 fi
@@ -81,7 +81,7 @@ echo -n "Create email to family? (y/n) "
 
 read sub
 if [[ $sub == 'y' ]]; then
-  if ( msgfamily.sh "$name" "$lat" "$lon" "$declat" "$declon" "$desc" "$type" ); then
+  if ( /Users/hmacread/dev/dropthehook/msgfamily.sh "$name" "$lat" "$lon" "$declat" "$declon" "$desc" "$type" ); then
     echo
     echo "Created email in Airmail successfully."
   fi
@@ -92,7 +92,7 @@ echo -n "Create position report? (y/n) "
 
 read sub
 if [[ $sub == 'y' ]]; then
-  if ( msgyotreps.sh "$lat" "$lon" "$desc" ); then
+  if ( /Users/hmacread/dev/dropthehook/msgyotreps.sh "$lat" "$lon" "$desc" ); then
     echo
     echo "Created YOTREPS in Airmail successfully."
   fi
@@ -100,4 +100,4 @@ fi
 
 
 
-vmdisconnect.sh
+/Users/hmacread/dev/dropthehook/vmdisconnect.sh

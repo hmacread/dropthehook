@@ -86,7 +86,7 @@ lat=$deglat-$minlat$dirlat
 lon=$deglon-$minlon$dirlon
 
 #truncate description to 79 chars (to be on the safe side)
-comment=`echo $comment | awk {'print substr($0,0,79)'}`
+#comment=`echo $comment | awk {'print substr($0,0,79)'}`
 
 #compile message field strings
 
@@ -126,7 +126,7 @@ if [ -n "$comment" ]; then
  msgtxt=`printf "$msgtxt\r\nCOMMENT: $comment"`
 fi
 
-injectmsg.sh "$msgtoaddr" "$msgsubj" "$msgtxt"
+/Users/hmacread/dev/dropthehook/injectmsg.sh "$msgtoaddr" "$msgsubj" "$msgtxt"
 
 #echo "To: $msgtoaddr"
 #echo "Subj: $msgsubj"

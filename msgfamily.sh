@@ -41,10 +41,11 @@ Description: $desc\r
 \r
 View in Google Maps: https://maps.google.com.au/maps?q=$latdec,$londec&num=1&t=h&z=5\r
 \r
-This is an automated message, but feel free to respond!\r
+You can check out progress at any time here:\r
+http://secret-bay-570.appspot.com/vessel/key/ahBzfnNlY3JldC1iYXktNTcwchoLEgVPd25lchjBlrECDAsSBlZlc3NlbBgBDA\r
 \r
 Love\r
 H&K"`
 
-injectmsg.sh "$msgtoaddr" "$msgsubj" "$msgtxt"
+/Users/hmacread/dev/dropthehook/injectmsg.sh "$msgtoaddr" "$msgsubj" "$msgtxt"
 
